@@ -1,1 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Franks Projects</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1A1D23; /* Dark blue background */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1 {
+        	font-family:monospace;
+            font-size: 36px;
+            font-weight: bold;
+            color: #03A9F4;
+            margin: 20px 0;
+        }
+
+        .project-container {
+            max-width: 900px;
+            margin: 20px;
+            background-color: #2E4053; /* Blue background */
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .project-description {
+            padding: 20px;
+        }
+
+        .project-description h2 {
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #03A9F4;
+        }
+
+        .project-description p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .view-demo-button,
+        .view-source-code-button {
+            background-color: #03A9F4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .view-source-code-button {
+            background-color: #333;
+        }
+
+        .view-demo-button:hover {
+            background-color: #0288D1;
+        }
+
+        .view-source-code-button:hover {
+            background-color: #444;
+        }
+
+        .view-demo-button:active,
+        .view-source-code-button:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 600px) {
+            .project-container {
+                width: 95%;
+            }
+
+            .project-description h2 {
+                font-size: 20px;
+            }
+
+            .project-description p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Here Are My Recent Projects.</h1>
+
+    <!-- Dynamic Project 1 Section -->
+    <div class="project-container">
+        <img src="/storage/emulated/0/Download/InstaPro/bmw/bmw-20241126-0004.jpg" alt="Project Image" class="project-image">
+        <div class="project-description">
+            <h2>Interactive Portfolio</h2>
+            <p>Explore my interactive portfolio built with HTML, CSS, and JavaScript. It showcases smooth transitions, animations, and a clean design for an engaging user experience.</p>
+        </div>
+        <div class="button-container">
+            <button class="view-demo-button" onclick="openLink('https://darrel-mucheri.vercel.app')">View Demo</button>
+            <button class="view-source-code-button" onclick="openLink('https://mrfrankinc.vercel.app/commingsoon.html')">View Source Code</button>
+        </div>
+    </div>
+ 
+ <!--Proj 2-->
+ 
+    <div class="project-container">
+        <img src="/storage/emulated/0/Download/InstaPro/bmw/bmw-20241126-0004.jpg" alt="Project Image" class="project-image">
+        <div class="project-description">
+            <h2>SubZero AI</h2>
+            <p>Personal Chat Bot build with Nodejs & Javascript that runs on whatsapp & also an android app.It is multi media as it downloads songs, videos, apps etc using scrape APIs from Youtube & Playstore</p>
+        </div>
+        <div class="button-container">
+            <button class="view-demo-button" onclick="openLink('https://example.com/demo2')">View Demo</button>
+            <button class="view-source-code-button" onclick="openLink('https://example.com/source2')">View Source Code</button>
+        </div>
+    </div>
+
+ <!--Proj 3-->
+ 
+    <div class="project-container">
+        <img src="/storage/emulated/0/Download/InstaPro/bmw/bmw-20241126-0004.jpg" alt="Project Image" class="project-image">
+        <div class="project-description">
+            <h2>WhatsApp Unbanner</h2>
+            <p>This is an advanced app designed to remove both permanent & temporary whatsapp bans. It uses both email request method to unban and more stuff.It can also ban users .</p>
+        </div>
+        <div class="button-container">
+            <button class="view-demo-button" onclick="openLink('https://example.com/demo2')">View Demo</button>
+            <button class="view-source-code-button" onclick="openLink('https://example.com/source2')">View Source Code</button>
+        </div>
+    </div>
+
+ <!--Proj 4-->
+ 
+    <div class="project-container">
+        <img src="/storage/emulated/0/Download/InstaPro/bmw/bmw-20241126-0004.jpg" alt="Project Image" class="project-image">
+        <div class="project-description">
+            <h2>Zero Crash W.A Bug</h2>
+            <p>This app uses advanced Algorithms & APIs to crash both Android & iOS whatsapp users. It is meant for educational purposes not haram by exploiting whatsapp weaknesses.</p>
+        </div>
+        <div class="button-container">
+            <button class="view-demo-button" onclick="openLink('https://example.com/demo2')">View Demo</button>
+            <button class="view-source-code-button" onclick="openLink('https://example.com/source2')">View Source Code</button>
+        </div>
+    </div>
+
+ <!--Proj 5-->
+ 
+    <div class="project-container">
+        <img src="/storage/emulated/0/Download/InstaPro/bmw/bmw-20241126-0004.jpg" alt="Project Image" class="project-image">
+        <div class="project-description">
+            <h2>E-Commerce Website</h2>
+            <p>A responsive e-commerce website with a modern UI/UX design, built using React and integrated with Firebase for backend support.</p>
+        </div>
+        <div class="button-container">
+            <button class="view-demo-button" onclick="openLink('https://example.com/demo2')">View Demo</button>
+            <button class="view-source-code-button" onclick="openLink('https://example.com/source2')">View Source Code</button>
+        </div>
+    </div>
+
+<!--Proj 6-->
+	
+
+ 
+    <div class="project-container">
+        <img src="/storage/emulated/0/Download/InstaPro/bmw/bmw-20241126-0004.jpg" alt="Project Image" class="project-image">
+        <div class="project-description">
+            <h2>E-Commerce Website</h2>
+            <p>A responsive e-commerce website with a modern UI/UX design, built using React and integrated with Firebase for backend support.</p>
+        </div>
+        <div class="button-container">
+            <button class="view-demo-button" onclick="openLink('https://example.com/demo2')">View Demo</button>
+            <button class="view-source-code-button" onclick="openLink('https://example.com/source2')">View Source Code</button>
+        </div>
+    </div>
+
+ <!--Proj 7-->
+ 
+    <div class="project-container">
+        <img src="/storage/emulated/0/Download/InstaPro/bmw/bmw-20241126-0004.jpg" alt="Project Image" class="project-image">
+        <div class="project-description">
+            <h2>Editor.io</h2>
+            <p>Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage.</p>
+        </div>
+        <div class="button-container">
+            <button class="view-demo-button" onclick="openLink('https://example.com/demo2')">View Demo</button>
+            <button class="view-source-code-button" onclick="openLink('https://example.com/source2')">View Source Code</button>
+        </div>
+    </div>
+
+ <!--Proj 8-->
+ 
+    <div class="project-container">
+        <img src="/storage/emulated/0/Download/InstaPro/bmw/bmw-20241126-0004.jpg" alt="Project Image" class="project-image">
+        <div class="project-description">
+            <h2>DevFolio</h2>
+            <p>My personal developers portifolio which showcases ones talent designed with Html, CSS & Js to meet up to your requirements.</p>
+        </div>
+        <div class="button-container">
+            <button class="view-demo-button" onclick="openLink('https://example.com/demo2')">View Demo</button>
+            <button class="view-source-code-button" onclick="openLink('https://example.com/source2')">View Source Code</button>
+        </div>
+    </div>
+    
+    
+ <!--9-->
+    <div class="project-container">
+        <img src="/storage/emulated/0/Download/InstaPro/bmw/bmw-20241126-0004.jpg" alt="Project Image" class="project-image">
+        <div class="project-description">
+            <h2>Sticky Keys Code Editor</h2>
+            <p>A multi programming tool to run codes of  all sorts of programming languages like Html,Js,CSS, Python & more.</p>
+        </div>
+        <div class="button-container">
+            <button class="view-demo-button" onclick="openLink('https://example.com/demo2')">View Demo</button>
+            <button class="view-source-code-button" onclick="openLink('https://example.com/source2')">View Source Code</button>
+        </div>
+    </div>
+<!--10-->
+    <div class="project-container">
+        <img src="/storage/emulated/0/Download/InstaPro/bmw/bmw-20241126-0004.jpg" alt="Project Image" class="project-image">
+        <div class="project-description">
+            <h2>NoobiesBlog</h2>
+            <p>A blog designed for young curious developers to learn  to codefrom zero to hero.</p>
+        </div>
+        <div class="button-container">
+            <button class="view-demo-button" onclick="openLink('https://example.com/demo2')">View Demo</button>
+            <button class="view-source-code-button" onclick="openLink('https://example.com/source2')">View Source Code</button>
+        </div>
+    </div>
+
+	 <!--Proj Last-->
+    <div class="project-container">
+        <img src="/storage/emulated/0/Download/InstaPro/bmw/bmw-20241126-0004.jpg" alt="Project Image" class="project-image">
+        <div class="project-description">
+            <h2>Delicious Cake Recipes</h2>
+            <p>This is an app that works offline with a bunch of readily loaded cake recipes & instructions. It is the best for bakers or curious cookers. I was insipired by my mom on this</p>
+        </div>
+        <div class="button-container">
+            <button class="view-demo-button" onclick="openLink('https://example.com/demo3')">View Demo</button>
+            <button class="view-source-code-button" onclick="openLink('https://example.com/source3')">View Source Code</button>
+        </div>
+    </div>
+
+<footer><bold>© 2024, All Rights Reserved, Mr Frank<bold></footer>
+<p>You are not a fool </p>
+
+    <script>
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
 
