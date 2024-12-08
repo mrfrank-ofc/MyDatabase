@@ -139,6 +139,10 @@ button:focus {
   background-color: rgba(255, 171, 64, 0.7);
 }
 
+.button5 {
+background-color: rgba(128, 0, 128, 0.7);
+}
+
 button.active {
   transform: scale(0.95);
   backdrop-filter: none;
