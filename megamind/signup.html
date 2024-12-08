@@ -80,7 +80,33 @@
     </div>
 
     <script>
+
+<script>
         const form = document.getElementById('signupForm');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/api/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, email, password }),
+                });
+                const data = await response.json();
+                console.log(data);
+                alert('Signup successful!');
+            } catch (error) {
+                console.error(error);
+                alert('Error signing up!');
+            }
+        });
+    </script>
+
+        
+      /*  const form = document.getElementById('signupForm');
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             const fullname = document.getElementById('fullname').value;
@@ -92,7 +118,7 @@
             alert(`Signup successful! Welcome, ${fullname}`);
             // Redirect to a success page or login page
             window.location.href = 'login.html'; 
-        });
+        }); */
     </script>
 </body>
 </html>
