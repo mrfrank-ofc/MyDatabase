@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Style Dashboard</title>
+  <title>Mr Frank's Mega Server</title>
   <style>
     /* Reset and Global Styles */
     * {
@@ -14,17 +14,20 @@
     body {
       font-family: Arial, sans-serif;
       color: #333;
-      background-color: #f4f4f9;
+      background-color: #eef2f6;
     }
 
     /* Header */
     header {
-      background-color: #24292e;
+      background-color: #0044cc;
       color: #fff;
       padding: 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     header .logo {
       font-size: 1.5rem;
@@ -46,13 +49,17 @@
     /* Sidebar */
     .sidebar {
       width: 250px;
-      background-color: #ffffff;
+      background-color: #0044cc;
       padding: 1rem;
       height: 100vh;
       position: fixed;
       top: 0;
       left: 0;
-      border-right: 1px solid #ddd;
+      color: #fff;
+      transition: transform 0.3s ease;
+    }
+    .sidebar.collapsed {
+      transform: translateX(-100%);
     }
     .sidebar h2 {
       font-size: 1.2rem;
@@ -65,23 +72,27 @@
       margin: 1rem 0;
     }
     .sidebar ul li a {
-      color: #333;
+      color: #fff;
       text-decoration: none;
     }
     .sidebar ul li a:hover {
-      color: #0073e6;
+      color: #cce7ff;
     }
 
     /* Main Content */
     .main-content {
       margin-left: 260px;
       padding: 1rem;
+      transition: margin-left 0.3s ease;
+    }
+    .main-content.collapsed {
+      margin-left: 0;
     }
     .main-content h1 {
       font-size: 2rem;
       margin-bottom: 1rem;
     }
-    .main-content .card {
+    .container {
       background-color: #fff;
       padding: 1rem;
       margin-bottom: 1rem;
@@ -90,54 +101,98 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    /* Modal */
-    .modal {
-      display: none;
+    /* Drawer */
+    .drawer {
       position: fixed;
       top: 0;
-      left: 0;
-      width: 100%;
+      right: -300px;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
+      width: 300px;
+      background-color: #f9f9f9;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+    .drawer.open {
+      transform: translateX(-300px);
+    }
+    .drawer h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #0044cc;
+    }
+    .drawer .profile-pic {
+      display: flex;
+      flex-direction: column;
       align-items: center;
-    }
-    .modal-content {
-      background-color: #fff;
-      padding: 1.5rem;
-      border-radius: 5px;
-      width: 90%;
-      max-width: 500px;
-    }
-    .modal-content h3 {
       margin-bottom: 1rem;
     }
-    .modal-content button {
-      background-color: #0073e6;
+    .drawer .profile-pic img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 2px solid #ddd;
+    }
+    .drawer .profile-pic input {
+      display: none;
+    }
+    .drawer .profile-pic label {
+      background-color: #0044cc;
       color: #fff;
-      border: none;
       padding: 0.5rem 1rem;
       border-radius: 5px;
       cursor: pointer;
+      text-align: center;
     }
-    .modal-content button:hover {
-      background-color: #005bb5;
+    .drawer .form-group {
+      margin-bottom: 1rem;
+    }
+    .drawer label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    .drawer input, .drawer button {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .drawer button {
+      background-color: #0044cc;
+      color: #fff;
+      cursor: pointer;
+    }
+    .drawer button:hover {
+      background-color: #003399;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+      .main-content {
+        margin-left: 0;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <div class="logo">My Dashboard</div>
+    <div class="logo">Mega Server</div>
     <nav class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">Repositories</a>
-      <a href="#">Settings</a>
+      <a href="menu.html" onclick="toggleSidebar()">Menu</a>
+      <a href="#" onclick="toggleDrawer()">Profile</a>
     </nav>
   </header>
 
   <!-- Sidebar -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <h2>Navigation</h2>
     <ul>
       <li><a href="#" onclick="showSection('dashboard')">Dashboard</a></li>
@@ -147,32 +202,58 @@
   </div>
 
   <!-- Main Content -->
-  <div class="main-content">
+  <div class="main-content" id="mainContent">
     <section id="dashboard">
       <h1>Dashboard</h1>
-      <div class="card">Welcome to your dashboard!</div>
+      <div class="container">Welcome to your dashboard!</div>
     </section>
     <section id="projects" style="display: none;">
       <h1>Projects</h1>
-      <div class="card">Here are your projects.</div>
+      <div class="container">Here are your projects.</div>
     </section>
     <section id="teams" style="display: none;">
       <h1>Teams</h1>
-      <div class="card">Here are your teams.</div>
+      <div class="container">Here are your teams.</div>
     </section>
   </div>
 
-  <!-- Modal -->
-  <div class="modal" id="exampleModal">
-    <div class="modal-content">
-      <h3>Welcome To My Server</h3>
-      <p>This is your own customizable dashboard feel free to change it to your needs!</p>
-      <button onclick="closeModal()">Close</button>
+  <!-- Drawer -->
+  <div class="drawer" id="drawer">
+    <h2>Set Your Profile</h2>
+    <div class="profile-pic">
+      <img id="profileImage" src="https://via.placeholder.com/100" alt="Profile Picture">
+      <input type="file" id="profilePicInput" accept="image/*" onchange="updateProfilePicture()">
+      <label for="profilePicInput">Change Picture</label>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter your username">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email">
+    </div>
+    <div class="form-group">
+      <label for="password">Change Password</label>
+      <input type="password" id="password" placeholder="Enter new password">
+    </div>
+    <div class="form-group">
+      <button onclick="saveProfile()">Save</button>
     </div>
   </div>
 
   <script>
-    // Function to show a specific section
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    const drawer = document.getElementById('drawer');
+
+    // Toggle Sidebar
+    function toggleSidebar() {
+      sidebar.classList.toggle('collapsed');
+      mainContent.classList.toggle('collapsed');
+    }
+
+    // Show Specific Section
     function showSection(sectionId) {
       document.querySelectorAll('.main-content section').forEach(section => {
         section.style.display = 'none';
@@ -180,19 +261,33 @@
       document.getElementById(sectionId).style.display = 'block';
     }
 
-    // Modal functionality
-    function openModal() {
-      document.getElementById('exampleModal').style.display = 'flex';
+    // Toggle Drawer
+    function toggleDrawer() {
+      drawer.classList.toggle('open');
     }
 
-    function closeModal() {
-      document.getElementById('exampleModal').style.display = 'none';
+    // Update Profile Picture
+    function updateProfilePicture() {
+      const fileInput = document.getElementById('profilePicInput');
+      const profileImage = document.getElementById('profileImage');
+      const file = fileInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          profileImage.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
     }
 
-    // Example of dynamic interaction
-    setTimeout(() => {
-      openModal();
-    }, 2000); // Opens modal 2 seconds after page load
+    // Save Profile Functionality
+    function saveProfile() {
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      alert(`Profile saved!\nUsername: ${username}\nEmail: ${email}\nPassword: ${password ? '******' : 'Not Changed'}`);
+      toggleDrawer();
+    }
   </script>
 </body>
 </html>
