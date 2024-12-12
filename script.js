@@ -2,7 +2,17 @@ function redirect(url) {
     window.location.href = url;
   }
   
+let visitorNumber = localStorage.getItem('visitorNumber');
 
+if (visitorNumber === null) {
+  visitorNumber = 0;
+}
+
+document.getElementById('visitor-number').textContent = visitorNumber;
+
+visitorNumber++;
+
+localStorage.setItem('visitorNumber', visitorNumber);
 
 
 
@@ -31,6 +41,17 @@ function redirectToURL(buttonIndex) {
     redirect(url);
   }
 }
+let visitorNumber = localStorage.getItem('visitorNumber');
+
+if (visitorNumber === null) {
+  visitorNumber = 0;
+}
+
+document.getElementById('visitor-number').textContent = visitorNumber;
+
+visitorNumber++;
+
+localStorage.setItem('visitorNumber', visitorNumber);
 
 function redirect(url) {
   window.location.href = url;
