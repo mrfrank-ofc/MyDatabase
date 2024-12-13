@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const app = express();
+const app = Router();
 
 mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -44,4 +44,3 @@ app.post('/api/login', async (req, res) => {
 app.listen(3000, () => {
   console.log('Server started on port 3000');
 });
-```
