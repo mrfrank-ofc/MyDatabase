@@ -151,3 +151,73 @@ button.active {
   transform: scale(0.95);
   backdrop-filter: none;
 }
+    .glitch-container {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      color: rgb(177, 48, 48);
+      position: relative;
+      display: inline-block;
+      animation: slide 5s infinite alternate;
+    }
+
+    .glitch-container::before,
+    .glitch-container::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      color: gold;
+      background: transparent;
+      clip-path: inset(0);
+      animation: glitch 1.5s infinite linear;
+    }
+
+    .glitch-container::before {
+      left: -2px;
+      text-shadow: 2px 0 red;
+      animation-delay: 0.2s;
+    }
+
+    .glitch-container::after {
+      left: 2px;
+      text-shadow: -2px 0 blue;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes glitch {
+      0% {
+        clip-path: inset(50% 0 0 0);
+        transform: translateY(-2px);
+      }
+      25% {
+        clip-path: inset(0 50% 50% 0);
+        transform: translateY(2px);
+      }
+      50% {
+        clip-path: inset(50% 0 0 0);
+        transform: translateY(-2px);
+      }
+      75% {
+        clip-path: inset(0 50% 50% 0);
+        transform: translateY(2px);
+      }
+      100% {
+        clip-path: inset(50% 0 0 0);
+      }
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(-100%);
+      }
+      50% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
