@@ -179,13 +179,13 @@ button.active {
     .glitch-container::before {
       left: -2px;
       text-shadow: 2px 0 red;
-      animation-delay: 0.2s;
+      animation-delay: 4s;
     }
 
     .glitch-container::after {
       left: 2px;
       text-shadow: -2px 0 blue;
-      animation-delay: 0.3s;
+      animation-delay: 3s;
     }
 
     @keyframes glitch {
