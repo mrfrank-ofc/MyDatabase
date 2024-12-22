@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="SUBZERO MD V2 QR/Pair • @PikaBotz">
+    <meta property="og:description" content="Qr-code and Pair-code linker for SUBZERO MD V2 Ver.2 WA bot.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://qr-pair-anyav2.koyeb.app/">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image" content="https://iili.io/2nrSWv9.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SUBZERO MD V2 QR/Pair • @PikaBotz">
+    <meta name="twitter:description" content="Qr-code and Pair-code linker for SUBZERO MD V2 Ver.2 WA bot.">
+    <meta name="twitter:image" content="https://iili.io/2nrSWv9.jpg">
+    <title>SUBZERO MD V2 Ver.2 Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Graduate&family=Gruppo&family=Playwrite+NG+Modern+Guides&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap">
+    <style>
+            * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+:root {
+  --color: #FAFAFA;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Graduate';
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.image-container {
+  margin-bottom: 2rem; /* Add spacing between the image and buttons */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+        body {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            background: linear-gradient(to bottom, #5d326c, #350048); /*fiolet*/
+            background-attachment: fixed;
+        }
+
+        .container {
+  color: var(--color);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: red;
+  margin-left: -120px;
+  font-size: 0.7rem;
+  padding: 5.9rem;
+  text-shadow: 2px 2px 0.1px rgba(0, 0, 0, 0.5);
+}
+
+.right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  margin-right: -87px;
+  font-size: 0.7rem;
+  padding: 3.3rem;
+  opacity: 0.5;
+  text-shadow: 2px 2px 0.1px rgba(0, 0, 0, 0.5);
+}
+
+.stack {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'Graduate', Arial, sans-serif;
+  width: 100%;
+  z-index: 1;
+  flex-direction: column;
+  text-shadow: 2px 2px 0.1px rgba(0, 0, 0, 0.5);
+}
+
+.stack span {
+  font-weight: bold;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  font-size: 2rem;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+  margin-top: -10rem;
+  white-space: nowrap;
+}
+
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+
+@keyframes stack {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  };
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: 2px 2px 0.1px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%, 100% {  text-shadow: 2px 2px 0.1px rgba(0, 0, 0, 0.5); transform: none; }
+}
+
+        .container .btn {
+            position: relative;
+            width: 250px;
+            height: 50px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .btn a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 10px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            overflow: hidden;
+            color: #fff;
+            font-weight: 400;
+            z-index: 1;
+            font-family: 'Graduate', Arial, sans-serif;
+            transition: 0.5s;
+            backdrop-filter: blur(15px);
+        }
+
+        .container .btn:hover a {
+            letter-spacing: 3px;
+        }
+
+        .container .btn a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+            transform: skewX(45deg) translate(0);
+            transition: 0.5s;
+            filter: blur(0px);
+        }
+
+        .container .btn:hover a::before {
+            transform: skewX(45deg) translate(200px);
+        }
+
+        .container .btn::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -5px;
+            width: 30px;
+            height: 10px;
+            background: #f00;
+            border-radius: 10px;
+            transition: 0.5s;
+            transition-delay: 0.5s;
+        }
+
+        .container .btn:hover::before {
+            bottom: 0;
+            height: 50%;
+            width: 80%;
+            border-radius: 30px;
+        }
+
+        .container .btn::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -5px;
+            width: 30px;
+            height: 10px;
+            background: #f00;
+            border-radius: 10px;
+            transition: 0.5s;
+            transition-delay: 0.5s;
+        }
+
+        .container .btn:hover::after {
+            top: 0;
+            height: 50%;
+            width: 80%;
+            border-radius: 30px;
+        }
+
+        .container .btn:nth-child(1)::before,
+        .container .btn:nth-child(1)::after {
+            background: #ff1f71;
+            box-shadow: 0 0 5px #ff1f71, 0 0 15px #ff1f71, 0 0 30px #ff1f71, 0 0 60px #ff1f71;
+        }
+        .container .btn:nth-child(1) {
+            margin-top: 20px;
+        }
+
+        .container .btn:nth-child(2)::before,
+        .container .btn:nth-child(2)::after {
+            background: #2db2ff;
+            box-shadow: 0 0 5px #2db2ff, 0 0 15px #2db2ff, 0 0 30px #2db2ff, 0 0 60px #2db2ff;
+        }
+        .container .btn:nth-child(2) {
+            margin-top: 20px;
+        }
+
+        .container .btn:nth-child(3)::before,
+        .container .btn:nth-child(3)::after {
+            background: #1eff45;
+            box-shadow: 0 0 5px #1eff45, 0 0 15px #1eff45, 0 0 30px #1eff45, 0 0 60px #1eff45;
+        }
+        .container .btn:nth-child(3) {
+            margin-top: 20px;
+        }
+        
+        .container .btn:nth-child(4)::before,
+        .container .btn:nth-child(4)::after {
+            background: #ff2d2d;
+            box-shadow: 0 0 5px #ff2d2d, 0 0 15px #ff2d2d, 0 0 30px #ff2d2d, 0 0 60px #ff2d2d;
+        }
+        .container .btn:nth-child(4) {
+            margin-top: 20px;
+        }
+
+.footer {
+  font-family: 'Gruppo', Arial, sans-serif;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 999;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+img {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 6rem;
+  margin-top: -6rem;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+}
+
+.image-container {
+  position: relative;
+  max-width: 150px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Ensure it's on top of everything */
+}
+
+.loading-text {
+  color: white;
+  font-size: 1rem;
+  font-family: sans-serif;
+  justify-content: center;
+  animation: fade 1.5s infinite;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+    </style>
+</head>
+<body>
+<div class="image-container">
+    <img src="https://i.postimg.cc/3NRw3cnj/Prince.jpg" alt="Image with faded area">
+    <div class="stack" style="--stacks: 3;">
+    <span style="--index: 0;">SUBZERO MD V2</span>
+    <span style="--index: 1;">SUBZERO MD V2</span>
+    <span style="--index: 2;">SUBZERO MD V2</span>
+  </div>
+    <span class="left" id="lefttop">Sexy</span>
+    <span class="right" id="version">Loading version...</span>
+</div> 
+    <div class="container">
+        <div class="btn"><a href="https://github.com/mrfrank-ofc/SUBZERO-V2" target="_blank">Repository 🚀</a></div>
+        <div class="btn"><a href="https://mrfrankinc.vercel.app">Developer ⚡</a></div>
+        <div class="btn"><a href="https://subzero-v2-session-id.onrender.com/pair">Pair ✨</a></div>
+        <div class="btn"><a href="https://github.com/mrfrank-ofc/SUBZERO-V2/archive/refs/heads/main.zip">Deploy Options 📂</a><div>
+    </div>
+    <div class="footer">
+        @SubZero Inc. 2025
+    </div>
+<script>
+const element = document.getElementById("lefttop");
+const messages = ["Cold", "Fast", "Icy", "Light", "G.O.A.T"];
+let index = 0;
+setInterval(() => {
+  element.id = messages[index];
+  element.textContent = messages[index];
+  index = (index + 1) % messages.length;
+}, 1500);
+    fetch('https://raw.githubusercontent.com/mrfrank-ofc/SUBZERO-V2/master/package.json')
+        .then(response => response.json())
+        .then(data => {
+            const version = data.version; 
+            document.getElementById('version').textContent = version; 
+        })
+        .catch(error => {
+            console.error('Error fetching version:', error);
+            document.getElementById('version').textContent = 'Version error'; 
+        });
+  window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loading-screen");
+    loadingScreen.style.transition = "opacity 1s ease-in-out";
+    loadingScreen.style.opacity = 0;
+    setTimeout(() => loadingScreen.style.display = "none", 1000);
+  });
+</script>
+<div id="loading-screen">
+  <div class="loading-text">ICE MELTING...</div>
+</div>
+</body>
+</html>
