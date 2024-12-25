@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form - Send to WhatsApp</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #0077b6;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="text"], input[type="email"] {
+    background-color: #ffffff;
+}
+
+textarea {
+    background-color: #ffffff;
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #0096c7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0077b6;
+}
+
+#status {
+    text-align: center;
+    margin-top: 20px;
+}
+
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <label for="whatsapp">WhatsApp Number</label>
+            <input type="text" id="whatsapp" name="whatsapp" placeholder="Your WhatsApp Number" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+<button type="submit">Send</button>
+        </form>
+        <div id="status"></div>
+    </div>
+
+    <script>
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    
+    // Get form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const whatsapp = document.getElementById('whatsapp').value;
+    const message = document.getElementById('message').value;
+
+    // Create a WhatsApp message URL
+    const whatsappMessage = `Hi, I'm name.{email}%0APhone: whatsapp{message}`;
+    
+    // WhatsApp API URL
+    const whatsappNumber = "263719647303"; // Change this to your WhatsApp number
+    const whatsappAPIUrl = `https://wa.me/whatsappNumber?text={encodeURIComponent(whatsappMessage)}`;
+    
+    // Open the WhatsApp link
+    window.open(whatsappAPIUrl, '_blank');
+
+    // Show a success message
+    document.getElementById('status').innerHTML = '<p style="color: green;">Message Sent! Redirecting to WhatsApp...</p>';
+    
+    // Clear the form
+    document.getElementById('contact-form').reset();
+});
+
+</script>
+</body>
+</html>
